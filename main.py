@@ -15,8 +15,7 @@ def print_menu():
     print("3. Quit")
     print()
 
-
-if __name__ == "__main__":
+def main():
     encoded_password = ""
     while True: # Simple user loop
         print_menu()
@@ -25,6 +24,11 @@ if __name__ == "__main__":
             password = input("Please enter a password to encode: ")
             encoded_password = encode(password)
             print("Your password has been encoded and stored!")
+        if choice == 2:
+            print(f"The encoded password is {encoded_password}, and the original password is _.")
         if choice == 3:
             exit()
+
+if __name__ == "__main__":
+    main()
 
