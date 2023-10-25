@@ -5,6 +5,11 @@ def encode(password):
         result += f"{(int(digit) + 3)%10}"
     return result
 
+def decode(password):
+    result = ""
+    for digit in password:
+        result += f"{(int(digit) - 3 + 10)%10}"
+    return result
 
 def print_menu():
     print()
@@ -25,7 +30,7 @@ def main():
             encoded_password = encode(password)
             print("Your password has been encoded and stored!")
         if choice == 2:
-            print(f"The encoded password is {encoded_password}, and the original password is _.")
+            print(f"The encoded password is {encoded_password}, and the original password is {decode(encoded_password)}.")
         if choice == 3:
             exit()
 
